@@ -15,6 +15,7 @@ img { display: block; width: 100%; }
 .masthead { position: absolute; z-index: 5; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 25px 34px; color: white; }
 .brand { font: 600 13px/1 "Manrope", sans-serif; letter-spacing: .13em; }
 .quiet-link { font-size: 13px; opacity: .78; border-bottom: 1px solid rgba(255,255,255,.45); padding-bottom: 3px; }
+.masthead-links { display: flex; gap: 24px; }
 
 .hero { min-height: 100svh; position: relative; display: flex; align-items: flex-end; color: white; overflow: hidden; }
 .hero-image { position: absolute; inset: -3%; background: url("assets/hero.webp") center/cover; animation: drift 18s ease-out both; }
@@ -44,6 +45,22 @@ h1 { font-size: clamp(46px, 6.4vw, 96px); line-height: .98; }
 .proof-piece figcaption span { grid-row: 1 / 3; font-size: 11px; color: #687370; }
 .proof-piece figcaption strong { font: 500 clamp(17px, 2vw, 25px)/1.2 "Manrope", sans-serif; }
 .proof-piece figcaption small { color: #687370; }
+
+.kit { display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr); min-height: 92vh; background: #d8d0c1; }
+.kit-visual { position: relative; min-height: 640px; overflow: hidden; }
+.kit-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,12,15,.52), transparent 48%); pointer-events: none; }
+.kit-visual img { height: 100%; object-fit: cover; transition: transform 1.1s cubic-bezier(.2,.8,.2,1); }
+.kit:hover .kit-visual img { transform: scale(1.018); }
+.kit-visual p { position: absolute; z-index: 1; left: 28px; bottom: 25px; margin: 0; color: rgba(255,255,255,.78); font-size: 11px; letter-spacing: .08em; }
+.kit-copy { align-self: center; padding: clamp(70px, 9vw, 135px) clamp(30px, 7vw, 105px); }
+.kit-copy h2 { max-width: 720px; font-size: clamp(40px, 5vw, 72px); line-height: 1.02; }
+.kit-lede { max-width: 610px; margin: 29px 0 45px; font-size: clamp(16px, 1.5vw, 20px); line-height: 1.6; color: #4d5654; }
+.kit-list { list-style: none; padding: 0; margin: 0 0 42px; border-top: 1px solid var(--line); }
+.kit-list li { display: grid; grid-template-columns: 47px 1fr; gap: 13px; padding: 17px 0; border-bottom: 1px solid var(--line); line-height: 1.45; }
+.kit-list span { padding-top: 3px; color: #6d7472; font-size: 10px; }
+.kit-actions { display: flex; align-items: center; gap: 25px; flex-wrap: wrap; }
+.text-action { font-size: 13px; font-weight: 600; border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
+.fulfilment { max-width: 580px; margin: 21px 0 0; color: #68716f; font-size: 11px; line-height: 1.5; }
 
 .offers { background: var(--ink); color: var(--paper); }
 .offers-heading { max-width: 980px; }
@@ -82,6 +99,9 @@ footer { display: flex; justify-content: space-between; padding: 22px 34px; back
   .hero-caption { display: none; }
   .proof-strip { grid-template-columns: 1fr; gap: 55px; }
   .proof-piece--offset { margin-top: 0; }
+  .kit { grid-template-columns: 1fr; }
+  .kit-visual { min-height: 54vh; }
+  .kit-copy { padding: 78px 24px 88px; }
   .offer { grid-template-columns: 35px 1fr; }
   .offer-buy { grid-column: 2; align-items: flex-start; text-align: left; margin-top: 8px; }
   .process { grid-template-columns: 1fr; }
@@ -95,4 +115,3 @@ footer { display: flex; justify-content: space-between; padding: 22px 34px; back
   .hero-image, .reveal { animation: none; opacity: 1; transform: none; }
   .offer { transition: none; }
 }
-
